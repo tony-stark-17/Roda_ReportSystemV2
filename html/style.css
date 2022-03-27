@@ -1,0 +1,597 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+* {
+  font-size: 0.9vw;
+}
+
+.menu {
+  position: absolute;
+  background: linear-gradient(133deg, rgba(0,0,0,0.5) 34%, rgba(255,0,0,0.5) 100%);
+  border-radius: 1vw;
+  width: 45vw;
+  height: 30vw;
+  top: 50%;
+  right: 50%;
+  box-shadow: 0vw 0vw 0.5vw black;
+  transform: translate(50%, -50%);
+}
+
+/* .menu::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 1vw;
+  padding: 0.2vw;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 0, 0, 0.445),
+    rgba(255, 255, 255, 0.521)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+} */
+
+.menu h1 {
+  color: white;
+  font-size: 2.3vw;
+  font-family: "Poppins";
+  position: absolute;
+  top: -3vw;
+  text-shadow: 0vw 0vw 0.5vw black;
+  margin-left: 2vw;
+}
+
+.typeMenu {
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  top: 20%;
+  left: 10%;
+}
+
+.typeMenu h1 {
+  border-left: 0.3vw solid rgb(255, 255, 255);
+  font-size: 1.4vw;
+  padding-left: 0.5vw;
+}
+
+.Divisores {
+  position: absolute;
+  /* background-color: white; */
+  width: 110%;
+  height: 70%;
+  top: 60%;
+  right: 43.5%;
+  transform: translate(50%, -50%);
+}
+
+@keyframes glow {
+  0% {
+    border-color: #f00;
+    box-shadow: 0 0 0.2vw rgba(255, 0, 0, 0.2),
+      inset 0 0 0.2vw rgba(255, 0, 0, 0.1), 0 0.1vw 0 #000;
+  }
+  100% {
+    border-color: #f00;
+    box-shadow: 0 0 1vw rgba(255, 0, 0, 0.6),
+      inset 0 0 0.5vw rgba(255, 0, 0, 0.4), 0 0.1vw 0 #000;
+  }
+}
+
+@keyframes glowBlanco {
+  0% {
+    border-color: #f00;
+    box-shadow: 0 0 0.2vw rgba(255, 255, 255, 0.2),
+      inset 0 0 0.2vw rgba(255, 0, 0, 0.1), 0 0.1vw 0 #000;
+  }
+  100% {
+    border-color: #f00;
+    box-shadow: 0 0 1vw rgba(255, 0, 0, 0.6),
+      inset 0 0 0.5vw rgba(255, 0, 0, 0.4), 0 0.1vw 0 #000;
+  }
+}
+
+.ReportType {
+  width: 13vw;
+  height: 80%;
+  display: inline-table;
+  margin-left: 1vw;
+  border-radius: 1vw;
+  transition: 0.5s;
+}
+
+.ReportType:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.PlayerReportClick {
+  background-image: url(https://images.hdqwalls.com/wallpapers/franklin-clinton-gta-v-dk.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.BugReport {
+  background-image: url(https://i.ytimg.com/vi/zTK2skwG4pw/maxresdefault.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.Other {
+  background-image: url(https://m.media-amazon.com/images/I/71w2nIsddsL._AC_SL1500_.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.ReportType h1 {
+  position: absolute;
+  top: 14.5vw;
+}
+
+.feCha {
+  position: absolute;
+  width: 100%;
+  height: 10%;
+  bottom: -1vw;
+  left: 2vw;
+}
+
+.feCha i {
+  color: white;
+  font-size: 1vw;
+}
+
+.feCha span {
+  font-family: "Poppins";
+  font-size: 0.8vw;
+  color: white;
+  margin-left: 0.5vw;
+}
+
+.NameInTop span {
+  font-family: "Poppins";
+  position: absolute;
+  color: white;
+  font-size: 1vw;
+  right: 2.5vw;
+  top: 1vw;
+}
+
+.NameInTop i {
+  color: white;
+  font-size: 1vw;
+  margin-left: 1vw;
+  position: absolute;
+  right: 1vw;
+  top: 1.2vw;
+}
+
+.closeMenu {
+  position: absolute;
+  top: 77%;
+  right: 50%;
+  font-size: 3vw;
+  color: rgba(255, 255, 255);
+  transform: translate(50%, -50%);
+  z-index: 2;
+  text-shadow: 0vw 0vw 0.5vw rgb(0, 0, 0);
+}
+
+.closeMenu:hover {
+  cursor: pointer;
+  text-shadow: 0vw 0vw 1vw rgb(0, 0, 0);
+}
+
+.leftSideReport {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 4vw;
+  top: 1vw;
+}
+
+.InputPro:focus {
+  animation: glow 800ms ease-out infinite alternate;
+  background-color: #000;
+  border-color: rgb(153, 51, 51);
+  box-shadow: 0 0 5px rgba(255, 0, 0, 0.2), inset 0 0 5px rgba(255, 0, 0, 0.1),
+    0 2px 0 #000;
+}
+@keyframes glow {
+  0% {
+    border-color: rgb(255, 255, 255);
+    box-shadow: 0 0 0.2vw rgba(255, 255, 255, 0.2),
+      inset 0 0 0.2vw rgba(255, 255, 255, 0.1), 0 2px 0 #000;
+  }
+  100% {
+    border-color: rgb(255, 255, 255);
+    box-shadow: 0 0 1vw rgba(255, 255, 255, 0.6),
+      inset 0 0 0.5vw rgba(255, 255, 255, 0.4), 0 0.1vw 0 #000;
+  }
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+.InputPro {
+  margin-left: 1.4vw;
+  width: 15vw;
+  outline: none;
+  height: 1.5vw;
+  margin-top: 0.5vw;
+  background-color: black;
+  color: #ffffff;
+  border-radius: 0.5vw;
+  font-family: "Poppins";
+  font-size: 0.8vw;
+  padding: 0.5vw 1vw 0.5vw 1vw;
+}
+
+.titleCont h1 {
+  font-size: 1.5vw;
+  text-align: left;
+  position: absolute;
+  top: -1.8vw;
+  left: -0.5vw;
+  color: rgba(255, 255, 255, 0.892);
+}
+
+.titleCont {
+  position: absolute;
+  top: 3vw;
+}
+
+.playerIdCont {
+  position: absolute;
+  top: -1vw;
+}
+
+.playerIdCont h1 {
+  font-size: 1.3vw;
+  top: -1.3vw;
+  left: -0.5vw;
+}
+
+.boxConta h1 {
+  color: rgba(255, 255, 255, 0.892);
+  font-size: 1.5vw;
+  text-align: left;
+  position: absolute;
+  top: -1.8vw;
+  left: -0.5vw;
+}
+
+.boxConta {
+  position: absolute;
+  top: 10vw;
+}
+
+.boxConta input {
+  height: 15vw;
+}
+
+textarea {
+  width: 10vw;
+  height: 30vw;
+}
+
+::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: white;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: white;
+}
+
+.rightSideReport {
+  position: absolute;
+  right: 0vw;
+  width: 50%;
+  height: 100%;
+  top: 5vw;
+  right: -1vw;
+}
+
+input[type="text"]::-webkit-search-decoration,
+input[type="text"]::-webkit-search-cancel-button,
+input[type="text"]::-webkit-search-results-button,
+input[type="text"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+
+.fotoBox {
+  position: absolute;
+  width: 17vw;
+  height: 10vw;
+  border: 0.2vw white dashed;
+  top: 1.2vw;
+  animation: glow 800ms ease-out infinite alternate;
+  left: 1.5vw;
+}
+
+.fotoBox i {
+  color: #ffffffb8;
+  font-size: 5vw;
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+.fotoBox:hover {
+  cursor: pointer;
+}
+
+.sendReport {
+  color: rgba(255, 255, 255, 0.899);
+  text-shadow: 0vw 0vw 0.8vw white;
+  position: absolute;
+  bottom: 4vw;
+  font-size: 3vw;
+  right: 1vw;
+}
+
+.sendReport:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+.GetCoords:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+.GotoxD:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+.GetCoords {
+  color: rgba(255, 255, 255, 0.899);
+  text-shadow: 0vw 0vw 0.8vw white;
+  position: absolute;
+  bottom: -1vw;
+  font-size: 2vw;
+  right: 0.5vw;
+}
+
+.GotoxD {
+  color: rgba(0, 255, 255, 0.699);
+  text-shadow: 0vw 0vw 0.8vw aqua;
+  position: absolute;
+  bottom: -1vw;
+  font-size: 2vw;
+  left: 0.5vw;
+  opacity: 0;
+}
+
+.inputImage {
+  position: absolute;
+  top: 15vw;
+  left: 2vw;
+}
+
+.inputImage input {
+  width: 12vw;
+}
+
+.inputImage h1 {
+  font-size: 1.2vw;
+  position: absolute;
+  top: -1vw;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+.ListReportPe {
+  position: absolute;
+  background: linear-gradient(133deg, rgba(0,0,0,0.5) 34%, rgba(255,0,0,0.5) 100%);
+  border-radius: 1vw;
+  width: 45vw;
+  height: 35vw;
+  top: 50%;
+  right: 50%;
+  box-shadow: 0vw 0vw 0.5vw black;
+  transform: translate(50%, -50%);
+}
+
+.listaHeader {
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  top: -1vw;
+  /* background-color: red; */
+}
+
+.listaHeader input {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+}
+
+.listaHeader h1 {
+  color: white;
+  font-size: 2.3vw;
+  font-family: "Poppins";
+  text-shadow: 0vw 0vw 0.5vw black;
+}
+
+.SearchIcon:hover {
+  cursor: pointer;
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+.SearchIcon {
+  color: rgba(255, 255, 255, 0.899);
+  text-shadow: 0vw 0vw 0.8vw white;
+  position: absolute;
+  top: 57%;
+  right: 34%;
+  transform: translate(50%, -50%);
+  font-size: 1.5vw;
+  opacity: 1;
+}
+
+.bodyContLista {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  top: 55%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  /* background-color: red; */
+}
+tbody:before {
+  content: "-";
+  display: block;
+  line-height: 1em;
+  color: transparent;
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.5vw;
+}
+
+thead span {
+  color: white;
+  font-size: 1vw;
+  font-family: "Poppins";
+  margin: 0vw 0.5vw 0vw 0.5vw;
+}
+
+thead i {
+  color: white;
+}
+
+td {
+  color: white;
+  font-size: 0.7vw;
+  font-family: "Poppins";
+  text-align: center;
+  padding: .5vw;
+}
+
+.titulojs {
+  border-left: 0.2vw solid white;
+  border-top-left-radius: .3vw;
+  border-bottom-left-radius: .3vw;
+}
+
+.datejs {
+  border-right: 0.2vw solid white;
+  border-top-right-radius: .3vw;
+  border-bottom-right-radius: .3vw;
+}
+
+/* Do this… */
+tbody > tr:nth-of-type(even) {
+    background-color: #212121;
+    padding: 0 .3vw;
+}
+
+tr {
+    margin: none;
+}
+ 
+tbody > tr {
+	    background-color: #7e0202;
+    padding: 0 .3vw;
+}
+
+
+/** ADD tavo :D **/
+
+
+.car-izaba{
+  position: absolute;
+  width: 9vw;
+    bottom: -4px;
+    z-index: 100;
+    left: -4px;
+  -webkit-transform: scaleY(-1);
+  transform: scaleY(-1);
+  animation: izaba 1s ;
+  filter: drop-shadow(0px 1px 1.3px #ff0000);
+}
+@keyframes izaba {
+
+  0%   {filter: drop-shadow(0px 0px 0px #ff0054);bottom: 10vh; stroke-opacity: 0.1; }
+  20%   {stroke-opacity: 0.3; }
+  60%   {stroke-opacity: 0.6; }
+  100% {filter: drop-shadow(0px 2px 1.3px #ff0054);stroke-opacity: 1; }
+}
+
+
+.car-supde{
+  position: absolute;
+  width: 9vw;
+  top: -4px;
+  z-index: 100;
+  right: -4px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  animation: izab 1s ;
+  filter: drop-shadow(0px 1px 1.3px #ff0000);
+}
+
+@keyframes izab {
+  0%   {top: 70px; stroke-opacity: 0.1; }
+  20%   {stroke-opacity: 0.3; }
+  60%   {stroke-opacity: 0.6; }
+  100% {stroke-opacity: 1; }
+}
+

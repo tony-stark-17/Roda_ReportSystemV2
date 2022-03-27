@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roda_Discord</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.staticaly.com/gh/hung1001/font-awesome-pro/4cac1a6/css/all.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="app.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin" rel="stylesheet">
+</head>
+<body>
+        <div class="container" style="display: none;">
+            <i class="fas fa-times closeMenu"></i>
+            <div class="menu">
+			
+			
+			<!-- ADD TAVO -->
+			<svg class="car-izaba" style="color: red;" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100.43 100.43">    
+                <path id="can-path22"  fill-opacity="0" stroke-width="2"stroke-linecap="round" stroke="#ff0000 " d="M2.525,29.843V11.28S3.38,2.5,12.21,2.5H29.906"/>
+			</svg>
+			<!-- ADD TAVO -->
+			
+			
+                <h1 class="titulo">RODA REPORT SYSTEM</h1>
+                <div class="NameInTop">
+                    <span class="NameUser">Rodrigo Aguilar puta</span>  <i class="fas fa-user"></i>
+                </div>
+                <div class="feCha">
+                    <i class="far fa-calendar-alt"></i><span> 26.04.45 23:43</span>
+                </div>
+                <div class="borrarTodoxD">
+                    <div class="typeMenu">
+                        <h1>Select a report type</h1>
+                    </div>
+                    <div class="Divisores">
+                        <div class="ReportType BugReport">
+                        <h1>BUG</h1>
+                        </div>
+                        <div class="ReportType PlayerReportClick">
+                            <h1>PLAYER</h1>
+                        </div>
+                        <div class="ReportType Other" >
+                            <h1>OTHER</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="ReportBugPage" style="display:none;">
+                    <div class="leftSideReport">
+                        <div class="titleCont">
+                            <h1>Title</h1>
+                            <input type="text" name="" placeholder="Type the title here..." class="InputPro" id="TitleText-1" style="outline: none; border: none;">
+                        </div>
+                        <div class="boxConta">
+                            <h1>Description</h1>
+                            <textarea name="" id="DescriptionText-1" placeholder="Type the description here..." class="InputPro" cols="30" rows="10" style="width: 15vw; height: 15vw;outline: none; border: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="rightSideReport">
+                        <div class="titleCont">
+                            <h1 style="color: rgba(255, 255, 255, 0.899);">Location</h1>
+                            <input type="text" name="" placeholder="Position" class="InputPro" readonly="readonly" id="locacionBugs" style="outline: none; border: none;">
+                            <i class="far fa-map-marker-alt GetCoords" id="locaBugClick"></i>
+                            <i class="fal fa-transporter-1 GotoxD"></i>
+                        </div>
+                        <div class="boxConta">
+                            <h1 style="color: rgba(255, 255, 255, 0.899);">Screenshot</h1>
+                            <div class="fotoBox">
+                                <i class="far fa-image"></i>
+                            </div>
+                        </div>
+                        <div class="inputImage" style="display: none;">
+                            <h1 style="color: rgba(255, 255, 255, 0.899);">Picture</h1>
+                            <input type="text" name="" placeholder="Url" class="InputPro"  id="imagenPapi-bug" style="outline: none; border: none;">
+                        </div>
+                        <i class="far fa-paper-plane sendReport"></i>
+                    </div>
+                </div>
+                <div class="OtherReport" style="display: none;">
+                    <div class="leftSideReport">
+                        <div class="titleCont">
+                            <h1>Title</h1>
+                            <input type="text" name="" placeholder="Type the title here..." class="InputPro" id="TitleText-2" style="outline: none; border: none;">
+                        </div>
+                        <div class="boxConta">
+                            <h1>Description</h1>
+                            <textarea name="" id="DescriptionText-2" placeholder="Type the description here..." class="InputPro" cols="30" rows="10" style="width: 15vw; height: 15vw;outline: none; border: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="rightSideReport">
+                        <div class="titleCont">
+                            <h1 style="color: rgba(255, 255, 255, 0.899);">Location</h1>
+                            <input type="text" name="" placeholder="Position" class="InputPro" readonly="readonly" id="locacionOther" style="outline: none; border: none;">
+                            <i class="far fa-map-marker-alt GetCoords"></i>
+                            <i class="fal fa-transporter-1 GotoxD"></i>
+                        </div>
+                        <div class="boxConta">
+                            <h1 style="color: rgba(255, 255, 255, 0.899);">Screenshot</h1>
+                            <div class="fotoBox">
+                                <i class="far fa-image"></i>
+                            </div>
+                        </div>
+                        <div class="inputImage" style="display: none;">
+                            <h1 style="color: rgba(255, 255, 255, 0.899);">Picture</h1>
+                            <input type="text" name="" placeholder="Url" class="InputPro"  id="imagenPapi-other" style="outline: none; border: none;">
+                        </div>
+                        <i class="far fa-paper-plane sendReport"></i>
+                    </div>
+                </div>
+                <div class="PlayerReport" style="display: none;">
+                    <div class="leftSideReport">
+                        <div class="titleCont">
+                            <h1>Title</h1>
+                            <input type="text" name="" placeholder="Type the title here..." class="InputPro" id="TitleText-3" style="outline: none; border: none;">
+                        </div>
+                        <div class="boxConta">
+                            <h1>Description</h1>
+                            <textarea name="" id="DescriptionText-3" placeholder="Type the description here..." class="InputPro" cols="30" rows="10" style="width: 15vw; height: 15vw;outline: none; border: none;"></textarea>
+                        </div>
+                    </div>
+                    <div class="rightSideReport">
+                        <div class="playerIdCont">
+                            <h1 style="color: rgba(255, 255, 255, 0.899);">Player ID</h1>
+                            <input type="number" name="" placeholder="Insert the player Id" class="InputPro"  id="pidjs" style="outline: none; border: none;">
+                            <i class="far fa-id-badge GetCoords" id="playerRcoords"></i>
+
+                        </div>
+                        <div class="titleCont">
+                            <h1 style="color: rgba(255, 255, 255, 0.899);">Location</h1>
+                            <input type="text" name="" placeholder="Position" class="InputPro" readonly="readonly" id="locacionPlayer" style="outline: none; border: none;">
+                            <i class="far fa-map-marker-alt GetCoords" id="coordsPlayer"></i>
+                            <i class="fal fa-transporter-1 GotoxD"></i>
+                        </div>
+                        <div class="boxConta">
+                            <h1 style="color: rgba(255, 255, 255, 0.899);">Screenshot</h1>
+                            <div class="fotoBox">
+                                <i class="far fa-image"></i>
+                            </div>
+                        </div>
+                        <div class="inputImage" style="display: none;">
+                            <h1 style="color: rgba(255, 255, 255, 0.899);">Picture</h1>
+                            <input type="text" name="" placeholder="Url" class="InputPro"  id="imagenPapi-player" style="outline: none; border: none;">
+                        </div>
+                        <i class="far fa-paper-plane sendReport"></i>
+                    </div>
+                </div>
+				
+				
+			<!-- ADD TAVO -->		
+            <svg class="car-supde" style="color: aliceblue;" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100.43 100.43">        
+                <path id="hunger-path22"  fill-opacity="0" stroke-width="2"stroke-linecap="round" stroke="#ff0000" d="M2.525,29.843V11.28S3.38,2.5,12.21,2.5H29.906"/>
+            </svg>
+			<!-- ADD TAVO -->
+				
+            </div>
+        </div>
+        <div class="ListReportPe">
+		
+		
+			<!-- ADD TAVO -->
+			<svg class="car-izaba" style="color: red;" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100.43 100.43">    
+                <path id="can-path22"  fill-opacity="0" stroke-width="2"stroke-linecap="round" stroke="#ff0000 " d="M2.525,29.843V11.28S3.38,2.5,12.21,2.5H29.906"/>
+			</svg>
+			<!-- ADD TAVO -->
+			
+			
+            <div class="BorrarPinga">
+                <div class="listaHeader">
+                    <input type="text" name="" placeholder="Search Reports" class="InputPro"  id="SearchReport" style="outline: none; border: none;">
+                    <i class="far fa-search-location SearchIcon"></i>
+                </div>
+                <div class="bodyContLista">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th><i class="fas fa-book-open"></i> <span> Title</span></th>
+                                <th><i class="fas fa-user"></i> <span> Name</span></th>
+                                <th><i class="fas fa-typewriter"></i> <span> Type</span></th>
+                                <th><i class="far fa-spinner"></i> <span> Status</span></th>
+                                <th><i class="fas fa-calendar-alt"></i> <span> Date</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                             <tr>
+                                <td class="titulojs">Me follaron</td>
+                                <td class="namejs">Roderic</td>
+                                <td class="typejs">Bug</td>
+                                <td class="checkjs"><i class="fas fa-check"></i></td>
+                                <td class="datejs">23.34.2033</td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+			
+			
+			<!-- ADD TAVO -->		
+            <svg class="car-supde" style="color: aliceblue;" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100.43 100.43">        
+                <path id="hunger-path22"  fill-opacity="0" stroke-width="2"stroke-linecap="round" stroke="#ff0000" d="M2.525,29.843V11.28S3.38,2.5,12.21,2.5H29.906"/>
+            </svg>
+			<!-- ADD TAVO -->
+        </div>
+</body>
+</html>
