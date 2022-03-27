@@ -1,8 +1,22 @@
 Config = {}
 
 Config.Db = 'mysql' -- ghmattisql, oxmysql or mysql
+
+Config.AreYouUseESX = true 
+
+Config.GroupsInCaseYouSetTrueAbove = {
+    'mod',
+    'admin', 
+    'superadmin'
+}
+
+ -- Just put your identifier if you set Config.AreYouUseESX = false
+
 Config.Identifier = 'license' -- license, steam, discord
 
 Config.Admins = {
-    'license:2139ddcb678c0a79eecc7515370ce71c3372f029', -- Depend what do u use and u set in Config.Identifier.
+    'license:34354325343', -- Depend what do u use and u set in Config.Identifier. 
 }
+
+
+

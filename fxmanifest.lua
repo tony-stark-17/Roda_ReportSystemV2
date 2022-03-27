@@ -30,3 +30,7 @@ files {
     'html/app.js', 
     'html/style.css'
 } 
+
+exports {
+    'ShowNoti'
+}

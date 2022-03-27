@@ -16,7 +16,6 @@ window.addEventListener("message", function(event) {
         break;
 
         case 'updateCoords':
-            console.log(v.coordenadas)
             $('#locacionPlayer').val(v.coordenadas)
             $('#locacionBugs').val(v.coordenadas)
             $('#locacionOther').val(v.coordenadas)
@@ -25,14 +24,13 @@ window.addEventListener("message", function(event) {
         case 'adminPanel': 
             var putita 
             $('.ListReportPe').fadeIn(500)
-            if (v.checkjs == 0) {
-                console.log('false')
+            if (v.checkjs == 1) {
                 putita = '<i class="fas fa-check" style="color:green; text-shadow: 0vw 0vw 0.8vw green"></i>'
-            } else if(v.checkjs == 1) {
+            } else if(v.checkjs == 0) {
                 putita = '<i class="fas fa-times" style="color:red; text-shadow: 0vw 0vw 0.8vw red"></i>'
             }
             $('tbody').append(`
-                <tr class="borrarReportesXd">
+                <tr class="borrarReportesXd" id="${v.reportid}">
                     <td class="titulojs">${v.titulojs}</td>
                     <td class="namejs">${v.namejs}</td>
                     <td class="typejs">${v.typejs}</td>
@@ -40,6 +38,36 @@ window.addEventListener("message", function(event) {
                     <td class="datejs">${v.datejs}</td>
                 </tr>
             `)
+
+            $(`#${v.reportid}`).click(function(){
+                $('.willbePid').attr('id', this.id)
+                $.post('https://Roda_ReportSystemV2/RequestReport', JSON.stringify({
+                    reportid : this.id
+                }));
+                
+            })
+        break;
+
+        case 'UpdateReport': 
+
+            $('.titulo').text(v.typejs)
+            $('.NameUser').text(v.namejs)
+            $('#TitleText-3').val(v.titulojs)
+            $('#DescriptionText-3').val(v.descriptionjs)
+            $('#pidjs').val(v.playerjs)
+            $('#DescriptionText-3').attr('readonly', 'readonly')
+            $('#TitleText-3').attr('readonly', 'readonly')
+            $('.fotoBox').css({'background-image':`url(${v.picturejs})`})
+            $('#locacionPlayer').val(v.coordsjs)
+            $('.sendReport').hide()
+            $('#SolveProblem').show()
+            $('.fa-image').hide()
+            OpenReportMenu()
+        break;
+
+
+        case 'showNoti': 
+            ShowNoti(v.tituloxD, v.cuerpoxD, v.color)
         break;
     }
 });
@@ -52,6 +80,27 @@ $(document).keyup((e) => {
 
 
 $(function(){
+
+
+    $('#SearchReport').keyup(function(){
+        // Search Text
+        var search = $(this).val();
+    
+        // Hide all table tbody rows
+        $('table tbody tr').hide();
+    
+        // Count total search result
+        var len = $('table tbody tr:not(.notfound) td:contains("'+search+'")').length;
+    
+        if(len > 0){
+          // Searching text in columns and show match row
+          $('table tbody tr:not(.notfound) td:contains("'+search+'")').each(function(){
+            $(this).closest('tr').show();
+          });
+        }
+    
+    });
+
     $('.closeMenu').click(function(){
         CloseAll()
     })
@@ -63,6 +112,14 @@ $(function(){
     $('.Other').click(function(){
         OpenOtherReport()
         $('.titulo').text('Other Report')
+       
+    })
+
+    $('#SolveProblem').click(function(){
+        $.post('https://Roda_ReportSystemV2/UpdateReport', JSON.stringify({
+            reportidxd : $('.willbePid').attr('id')
+        }));
+        CloseAll()
     })
 
     $('.PlayerReportClick').click(function(){
@@ -72,7 +129,6 @@ $(function(){
 
 
     $('.GetCoords').click(function(){
-        console.log('pressed?')
         $.post('https://Roda_ReportSystemV2/GetCoords', JSON.stringify({}));
     })
 
@@ -102,7 +158,7 @@ $(function(){
             descripcion : descripcion || 'NO DESCRIPTION',
             username : username, 
             fecha : fecha, 
-            picture : picture || 'NULL',
+            picture : picture || 'https://media.discordapp.net/attachments/946896143621705799/957728209540100127/ezgif.com-gif-maker_7.png',
             coords : coords,
             type : type || 'Default',
             targetid : pidreportes || 0
@@ -113,20 +169,35 @@ $(function(){
 
 function CloseAll(){
     $.post('https://Roda_ReportSystemV2/exit', JSON.stringify({}));
-    $('.container').fadeOut(500)
     $('.borrarTodoxD').show()
     $('.ReportBugPage').hide()
     $('.OtherReport').hide()
     $('.PlayerReport').hide()
     $('.fa-image').show()
     $('.inputImage').hide()
+    $('.ListReportPe').hide()
+    $('.borrarReportesXd').remove()
     $(':input').val('')
+    $('#DescriptionText-3').removeAttr('readonly')
+    $('#TitleText-3').removeAttr('readonly')
+    $('.fotoBox').css({'background-image':`none`})
+    $('.fa-image').show()
     $('.titulo').text('RODA REPORT SYSTEM')
+    $('.container').fadeOut(500)
+    $('.sendReport').show()
+    $('#SolveProblem').hide()
 }
 
 function OpenBugReport(){
     $('.borrarTodoxD').hide()
     $('.ReportBugPage').show()
+}
+
+function OpenReportMenu(){
+    $('.borrarTodoxD').hide()
+    $('.ListReportPe').hide()
+    $('.container').show()
+    $('.PlayerReport').show()
 }
 
 function OpenOtherReport(){
@@ -142,4 +213,29 @@ function OpenPlayerReport(){
 
 function OpenPrincipalMenu() {
     $('.borrarTodoxD').show()
+}
+
+function ShowNoti(title, cuerpo, color) {
+
+    var id = $(`.NotisDaddy .notis`).length;
+    $('.NotisDaddy').animate({'right':'1vw'})
+    $('.NotisDaddy').show()
+    $('.NotisDaddy').append(`
+    <div id=${id} class="notis"> 
+        <svg class="car-izaba" style="color: red;" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100.43 20">    
+            <path id="can-path22"  fill-opacity="0" stroke-width="2"stroke-linecap="round" stroke="${color}" d="M2.525,29.843V11.28S3.38,2.5,12.21,2.5H29.906"/>
+        </svg>
+            <h1>${title}</h1>
+            <p>${cuerpo}</p>
+        <svg class="car-supde" style="color: aliceblue;" xmlns="http://www.w3.org/2000/svg" version="1.1" x="0px" y="0px" viewBox="0 0 100.43 20">        
+            <path id="hunger-path22"  fill-opacity="0" stroke-width="2"stroke-linecap="round" stroke="${color}" d="M2.525,29.843V11.28S3.38,2.5,12.21,2.5H29.906"/>
+        </svg>
+    </div>
+    `)
+    
+    setTimeout(function () {
+        var $this = $(`.NotisDaddy .notis[id=${id}]`);
+
+        $this.fadeOut(400)
+    }, 3000)
 }
